@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore a collection of cinematic masterpieces, including Howl's Moving Castle, Spirited Away, Everything Everywhere All At Once, Lucy, and Om Shanti Om.">
+    <title>Movies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200&family=DM+Serif+Display&family=Koulen&family=Noto+Nastaliq+Urdu:wght@400;700&family=Oswald:wght@200;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-HJUqNq1zHfKPkX40P7FqFByfQrTNP0G8yL1ct3GR+3T5o1zZf4aZfFt5/UVe/jQ" crossorigin="anonymous">
+    <style>
+        /* general stuff */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    background-color: #7e0b41;
+    border: double 10px #00e858;
+    max-width: 100%;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+/* main section */
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.main-section {
+    width: 100%;
+}
+.Welcome-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+.lmao {
+    position: relative;
+    left: 10%;
+    right: 10%;
+}
+.movie {
+    margin-top: 20px;
+    padding-right: 10%;
+}
+
+header {
+    background-color: #7e0b41;
+    padding: 10px 0;
+    text-align: center;
+}
+/* text */
+h1 {
+    display: block;
+    font-size: 500%;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'DM Serif Display', serif;
+    color: #00e858;
+    z-index: 100;
+}
+h1:hover, .tagline:hover {
+    color: #000000;
+}
+.tagline {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    font-size: 150%;
+    color: #00e858;
+    position: relative;
+    top: -80px;
+    z-index: 100;
+}
+h2 {
+    font-size: 30px;
+}
+p, p li {
+    font-size: 20px;
+    max-width: 90%; 
+}
+.character-names:hover, span:hover, h2:hover, .list:hover {
+    color: #00e858;
+    font-size: 30px;
+}
+.character-names {
+    font-size: 20px;
+}
+/* image */
+img {
+    max-width: 100%;
+    height: auto;
+    float: left; /* Float the image to the left */
+    margin-right: 10px; /* Add a margin to create space between the image and text */
+}
+.project-image {
+    max-width: 240px;
+    height: auto;
+    border: solid 5px;
+}
+.project-image:hover {
+    color: #00e858;
+    border: solid 9px #00e858;
+}
+
+/* list */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* footer */
+.contact-links a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 18px;
+}
+.contact-links > a:hover, .copyright:hover  {
+    color: #00e858;
+    font-size: 20px;
+}
+footer {
+    text-align: center;
+}
+.copyright {
+    margin: auto;
+    padding-bottom: 9px;
+    padding-top: 9px;
+}
+
+/* navigation bar */
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 100;
+}
+.nav-list li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #00e858;
+    font-size: 25px;
+}
+.nav-list li a:hover {
+    text-decoration: none;
+    color: #000000;
+    font-size: 18px;
+}
+
+/* Additional Stuff */
+.arrow {
+    position: fixed;
+    bottom: 20px; 
+    right: 20px; 
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent; 
+    border-right: 20px solid transparent; 
+    border-top: 20px solid #00e858; /* Adjust as needed for color */
+    cursor: pointer; /* Optional: Add a pointer cursor on hover */
+    z-index: 100;
+}
+.blurred-line {
+    width: 98%;
+    height: 650px;
+    background-image: repeating-linear-gradient(to right, transparent, transparent 5px, #9f1455 5px, #b30e5b5f 10px); /* Adjust the colors and distances as needed */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 1;
+}
+
+/* Makin it cewl */
+@media only screen and (max-width: 1000px) {
+    body, header {
+        background-color: #370965;
+    }
+    .blurred-line {
+        background-image: repeating-linear-gradient(to right, transparent, transparent 5px, #5b377f 5px, #6f4a94 10px); /* Adjust the colors and distances as needed */
+
+    }
+    h1:hover, .tagline:hover, p, h2, li, .nav-list li a:hover {
+        color: #ffffff;
+    }
+    .project-image {
+        border: solid 9px #ffffff;
+    }
+    footer, .btn, .fab {
+        color: #082852;
+    }
+    .fab:hover, .character-names:hover {
+        color: #00e858;
+    }
+    footer, .contact-details {
+        color: white;
+    }
+    .tagline {
+        padding: 20px;
+    }
+    p {
+        font-family: Helvetica, sans-serif;
+        font-size: 16px;
+        line-height: 30px;
+    }
+    h2:hover, .nav-list li a:hover, h1:hover, .tagline:hover {
+        color: #ffffff;
+    }
+}
+@media only screen and (max-width: 768px) {
+    body, header {
+        background-color: #3071c5;
+    }
+    .blurred-line {
+        background-image: repeating-linear-gradient(to right, transparent, transparent 5px, #1c60b4 5px, #0e5bb35f 10px); /* Adjust the colors and distances as needed */
+
+    }
+    h1:hover, .tagline:hover, p, h2, li, .nav-list li a:hover {
+        color: #082852;
+    }
+    .project-image {
+        border: solid 9px #082852;
+    }
+    footer, .btn, .fab {
+        color: #082852;
+    }
+    .fab:hover {
+        color: #00e858;
+    }
+}
+@media only screen and (max-width: 480px) {
+    body, header {
+        background-color: #005326;
+    }
+    .blurred-line {
+        background-image: repeating-linear-gradient(to right, transparent, transparent 5px, #1a6e3f 5px, #108243b2 10px); /* Adjust the colors and distances as needed */
+        width: 96%;
+        height: 700px;
+        position: absolute;
+        top: 10px;
+    }
+    .project-image {
+        border: solid 9px #59c55d;
+    }
+    footer, .btn, .fab, .fab:hover, .character-names li,p, li  {
+        color: #59c55d;
+    }
+    .character-names li:hover, .fab:hover, .copyright:hover, h2 {
+        color: #ffffff;
+    }
+    p {
+        font-size: 14px;
+        font-family: Helvetica, sans-serif;
+        padding: 2px;
+        line-height: 22px;
+        padding-top: 10px;
+    }
+    .project-image:hover {
+        border: none;
+    }
+    h2:hover, span:hover, .nav-list li a:hover, h1:hover, .tagline:hover {
+        color: #ffffff;
+    }
+    .tagline {
+        position: relative;
+        padding: 40px;
+        text-align: center;
+        line-height: 40px;
+    }
+    .project-image {
+        border: none;
+        padding: 20px;
+    }
+    span:hover {
+        font-size: 20px;
+    }
+    .arrow:hover {
+    border-left: 20px solid transparent; 
+    border-right: 20px solid transparent; 
+    border-top: 20px solid #ffffff;
+    }
+    h1 {
+        font-size: 60px;
+    }
+    .nav-list {
+        display: none; /* Hide the navigation bar */
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="navbar" class="nav">
+            <ul class="nav-list">
+                <li><a class="list" href="#Howl">Howl's Moving Castle</a></li>
+                <li><a class="list" href="#Spirited">Spiritied Away</a></li>
+                <li><a class="list" href="#Everything">Everything Everywhere All at Once</a></li>
+                <li><a class="list" href="#Lucy">Lucy</a></li>
+                <li><a class="list" href="#Om">Om Shanti Om</a></li>
+                <li><a class="list" href="#Handmaiden">The Handmaiden</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="Welcome-section" id="Welcome">
+            <div class="blurred-line"></div>
+            <h1>A story woven in the shadows of lights</h1>
+            <p class="tagline">روشنیوں کی چھاؤں میں لپٹی ہوئی داستان</p>
+        </section>
+        <section class="Main-section" id="Main">
+            <div class="arrow"></div>
+            <div class="lmao">
+            <h2>Howl's Moving Castle</h2>
+            <div class="movie wrapper" id="Howl">
+                <img id="Howl-castle" class="project-image" src="https://m.media-amazon.com/images/I/61tM0sDkPyL._AC_UF1000,1000_QL80_.jpg"  alt="poster depicting sophie and howl as he saves her from the ashes and is almost turned into a full bird"/>
+                <p><span>"Howl's Moving Castle,"</span> the animated masterpiece by Hayao Miyazaki, unfolds as a mesmerizing tapestry of enchantment, seamlessly intertwining anti-war imagery with a spellbinding exploration of romance. Miyazaki's unique ability to infuse profound themes into visually stunning narratives is exemplified in this cinematic gem.</p>
+                <p>Against the backdrop of a war-torn world, Miyazaki crafts a narrative that subtly but powerfully critiques the senselessness of conflict. The moving castle, an eccentric and whimsical creation, becomes a mobile sanctuary navigating a landscape scarred by war. Its peculiarities mirror the absurdities of conflict, offering both a refuge for its inhabitants and a symbolic rejection of the destructive forces that ravage the land. Miyazaki employs his visual storytelling prowess to depict the consequences of war, urging audiences to reflect on the futility of violence.</p>
+                <p>Central to the film's emotional core is the tender romance between Sophie and Howl. Miyazaki delicately navigates the complexities of their relationship, weaving a narrative thread that transcends physical appearances and societal norms. Sophie, cursed with an elderly form, and Howl, a charismatic and enigmatic wizard, embark on a journey that goes beyond the superficial. The film beautifully underscores the transformative nature of love, illustrating how genuine connections can defy societal expectations and bring about profound personal change.</p>
+                <p>The romance not only serves as a driving force within the plot but also reinforces the film's anti-war message. As Sophie and Howl find solace and strength in each other, Miyazaki suggests that love has the potential to counteract the divisive forces of war. Their relationship becomes a beacon of hope in a world overshadowed by conflict, emphasizing the redemptive and healing power of human connection.</p>
+                <p>Miyazaki's visual aesthetic further enhances the emotional resonance of the narrative. The lush and vibrant animation brings to life a fantastical world, where every frame is a work of art. The moving castle itself, with its fantastical design and magical capabilities, becomes a metaphor for the characters' journey—a journey of self-discovery, love, and resilience against the backdrop of war.</p>
+                <ul class="character-names">
+                    <li>Sophie Hatter</li>
+                    <li>Howl (Wizard Howl Jenkins Pendragon)</li>
+                    <li>Calcifer</li>
+                    <li>Turnip Head</li>
+                    <li>Markl</li>
+                    <li>The Witch of the West</li>
+                </ul>
+            </div>
+            <div class="movie wrapper" id="Spirited">
+                <h2>Spirited Away</h2>
+                <img id="Away" class="project-image" src="https://m.media-amazon.com/images/I/71E4cV914GL._AC_UF1000,1000_QL80_.jpg"  alt="poster depicting shihiro an done of her parents in the form of a pig in front of the bathhouse"/>
+                <p><span>"Spirited Away,"</span> a mesmerizing masterpiece by Hayao Miyazaki, not only enchants audiences with its magical landscapes but also delves into profound themes of coming of age, consumerism, and the awakening to the complexities of the world. Miyazaki's storytelling transcends the boundaries of animation, weaving a narrative that resonates with viewers of all ages.</p>
+                <p>At its heart, <span>"Spirited Away"</span> is a coming-of-age tale that unfolds through the eyes of the young protagonist, Chihiro. Initially apprehensive and reliant on her parents, Chihiro undergoes a remarkable transformation as she navigates the bewildering and enchanting spirit world. Her journey mirrors the universal experience of growing up, where the discovery of inner strength and resilience is accompanied by the inevitable encounter with the complexities of the world.</p>
+                <p>Consumerism emerges as a poignant theme in the bustling bathhouse where spirits seek leisure and pleasure. Miyazaki artfully critiques the pitfalls of a profit-driven mindset, portraying a world where characters are consumed by their desires. The bathhouse, a symbol of excess and materialism, becomes a backdrop against which Chihiro learns valuable lessons about the consequences of unbridled consumption and greed.</p>
+                <p>As Chihiro grapples with the challenges presented by the spirit world, she gains a wave of knowledge about the world's intricacies, both magical and mundane. This mirrors the real-world experience of coming of age, where individuals transition from the sheltered innocence of childhood to a deeper understanding of the complexities, challenges, and even the darker aspects of society.</p>
+                <p>The film beautifully captures the moment when the veil of childhood naivety is lifted, and Chihiro becomes cognizant of the impact of human actions on the spirit world. The environmental degradation caused by pollution and the spirits transformed into grotesque forms serve as powerful metaphors for the consequences of unchecked industrialization.</p>
+                <p>In the face of consumerism and environmental degradation, Chihiro's coming-of-age journey becomes a poignant allegory for the individual's responsibility to confront and rectify the societal challenges that arise from materialism and environmental neglect. Her character embodies the transformative power of empathy, courage, and the willingness to stand against the prevailing tide of greed.</p>
+                <ul class="character-names">
+                    <li>Chihiro/Sen</li>
+                    <li>Haku</li>
+                    <li>Yubaba</li>
+                    <li>Zeniba</li>
+                    <li>No-Face</li>
+                    <li>Lin</li>
+                </ul>
+            </div>
+            <div class="movie wrapper" id="Everything">
+                <h2>Everything Everywhere All At Once</h2>
+                <img id="Everywhere" class="project-image" src="https://d135u4jtzauizi.cloudfront.net/EEAAOPayoff.jpg"  alt="poster depicting all of the characters in a typical poster format and a red background."/>
+                <p><span>"Everything Everywhere All At Once"</span> is a 2022 American independent film that defies categorization, seamlessly blending elements from various genres and film mediums. Directed and written by Daniel Kwan and Daniel Scheinert, the movie incorporates absurdist fiction, comedy-drama, surreal comedy, science fiction, fantasy, martial arts films, immigrant narrative, and animation. Starring Michelle Yeoh as Evelyn Quan Wang, the film takes audiences on a multiversal adventure, incorporating influences from Hong Kong film director Wong Kar-wai, the children's book <span>"Sylvester and the Magic Pebble,"</span> and the video game <span>"Everything."</span>
+                <p>The narrative follows Evelyn, a Chinese-American immigrant and laundromat owner, whose life takes an extraordinary turn during an IRS audit. Discovering the existence of parallel universes, Evelyn must connect with versions of herself to prevent a powerful being, Jobu Tupaki, from destroying the multiverse. The film's soundtrack, featuring compositions by Son Lux and collaborations with Mitski, David Byrne, André 3000, John Hampson, and Randy Newman, adds depth to the cinematic experience.</p>
+                <p>Premiering at South by Southwest in 2022, <span>"Everything Everywhere All At Once"</span> garnered critical acclaim and achieved significant success at the 95th Academy Awards. With a leading seven awards, including Best Picture, Best Actress for Michelle Yeoh, and Best Director for Kwan and Scheinert, the film became A24's highest-grossing film, grossing over $141 million worldwide. It also earned recognition at the Golden Globe Awards, Critics' Choice Awards, BAFTA Awards, SAG Awards, and Independent Spirit Awards.</p>
+                <p>The film explores profound philosophical themes such as existentialism, nihilism, surrealism, and absurdism, while also delving into subjects like neurodivergence, depression, generational trauma, and Asian American identity. Evelyn's journey, portrayed by Michelle Yeoh with grace and depth, unfolds against a backdrop of familial tensions, marriage challenges, and the complexities of identity.</p>
+                <p>As the narrative unfolds, Evelyn confronts her parallel selves and navigates diverse universes, each revealing different aspects of her life. The existential crisis reaches its peak when confronted by Jobu Tupaki, leading to a multiversal adventure that challenges Evelyn's perceptions of reality. Themes of empathy, existentialism, and humanism come to the forefront as Evelyn grapples with the potential destruction of the multiverse.</p>
+                <ul class="character-names">
+                    <li>Evelyn Quan Wang</li>
+                    <li>Joy Wang</li>
+                    <li>Waymond Wang</li>
+                    <li>Jobu Tupaki</li>
+                </ul>
+            </div>
+            <div class="movie wrapper" id="Lucy">
+                <h2>Lucy</h2>
+                <img id="Scarlet" class="project-image" src="https://m.media-amazon.com/images/I/81qlPSElf7L._AC_UF894,1000_QL80_.jpg"  alt="poster depicting scarlet johannssen's half face."/>
+                <p><span>"Lucy,"</span> a cinematic journey directed by Luc Besson and graced by the enigmatic Scarlett Johansson, is a mesmerizing exploration of the mind's untapped potential. In this visually stunning odyssey, Johansson not only delivers a performance that transcends boundaries but does so while looking absolutely radiant.</p>
+                <p>At the heart of the film is the theme of transcendence and evolution, embodied by Johansson's character, Lucy. As she gains access to higher percentages of her brain's capacity, the screen is alight with her limitless knowledge and power. Johansson's portrayal is not just an acting feat; it's a visual spectacle that explores the intersection of time, consciousness, and the very essence of the human experience.</p>
+                <p>The film delves into existentialism and purpose, prompting Johansson's Lucy to confront profound questions about the meaning of life. Against the backdrop of breathtaking cinematography, Lucy's transformation becomes a metaphor for breaking free from societal constraints, a theme heightened by Johansson's captivating on-screen presence.</p>
+                <p><span>"Lucy"</span> also delves into the ethical dilemmas posed by newfound abilities. Johansson's character becomes a vessel for questioning the responsibilities that come with extraordinary power. As she navigates a world that struggles to comprehend her evolution, the film invites audiences to ponder the moral implications of pushing the boundaries of human potential.</p>
+                <p>Scarlett Johansson's portrayal of Lucy is not just a display of acting prowess; it's an embodiment of the film's thematic exploration. Her character's journey reflects on the limitless potential within the human mind, questioning the imposed limits of societal norms. In this cinematic spectacle, Johansson becomes the visual conduit for philosophical inquiries about existence, identity, and the very fabric of reality.</p>
+                <ul class="character-names">
+                    <li>Lucy</li>
+                    <li>Professor Norman</li>
+                    <li>Pierre Del Rio</li>
+                    <li>Mr. Jang</li>
+                </ul>
+            </div>
+            <div class="movie wrapper" id="Om">
+                <h2>Om Shanti Om</h2>
+                <img id="Shanti" class="project-image" src="https://i.pinimg.com/736x/f5/83/6d/f5836d388d82f9d790eeb859673cd1fc.jpg"  alt="poster depicting om and sandhya in a sort of vintage style of poster"/>
+                <p><span>"Om Shanti Om,"</span> directed by Farah Khan and released in 2007, is a Bollywood spectacle that seamlessly weaves together romance, drama, and comedy with a touch of nostalgia. The film not only pays homage to the golden era of Hindi cinema but also serves as a vibrant and entertaining journey for movie enthusiasts.</p>
+                <p>At its core, <span>"Om Shanti Om"</span> is a tale of love, reincarnation, and the pursuit of justice across lifetimes. Shah Rukh Khan, in a dual role, showcases his versatility as an actor, effortlessly transitioning between the charming Om Prakash Makhija and the determined Omi Kapoor. His performance carries the film, infusing it with charisma, emotion, and a dash of comedic flair.</p>
+                <p>The narrative unfolds with a perfect mix of humor and heart, capturing the audience's attention from the very beginning. Deepika Padukone, in her debut role as Shantipriya/Sandhya, is a breath of fresh air, exuding grace and charm. The chemistry between Shah Rukh Khan and Deepika Padukone adds a delightful layer to the storytelling, making the romantic elements of the film truly captivating.</p>
+                <p>One of the film's strengths lies in its ability to seamlessly transition between eras, immersing the audience in the glitz and glamour of 1970s Bollywood and then effortlessly transporting them to the contemporary setting. The meticulous attention to detail in recreating the cinematic magic of the past is commendable, and the production design contributes significantly to the film's visual appeal.</p>
+                <p>The music of <span>"Om Shanti Om"</span> deserves a special mention, with its foot-tapping numbers and soulful melodies. The soundtrack, composed by Vishal-Shekhar, not only complements the narrative but also adds to the overall entertainment quotient of the film. Iconic tracks like <span>"Deewangi Deewangi"</span> and the titular <span>"Om Shanti Om"</span> have become synonymous with the movie.</p>
+                <p>The climax, set during the shooting of a film, brings a poignant full-circle moment where Om exposes Mukesh's crimes, achieving a form of justice that resonates beyond personal vindication.</p>
+                <ul class="character-names">
+                    <li>Om Prakash Makhija / Om Kapoor</li>
+                    <li>Shantipriya / Sandhya</li>
+                    <li>Mukesh Mehra</li>
+                    <li>Pappu Master</li>
+                    <li>Om's Mother</li>
+                </ul>
+            </div>
+            <div class="movie wrapper" id="Handmaiden">
+                <h2>The Handmaiden</h2>
+                <img id="maid" class="project-image" src="https://m.media-amazon.com/images/M/MV5BNWIxMTc5MDAtYTQ1Zi00NjMzLThmMjItNDRiYjFhMjE0YTE1XkEyXkFqcGdeQXVyODIyOTEyMzY@._V1_.jpg"  alt="poster depicting the three main characters in a natural setting"/>
+                <p><span>"The Handmaiden,"</span> directed by Park Chan-wook, is a cinematic masterpiece that weaves an intricate tapestry of suspense, desire, and betrayal. Set against the backdrop of 1930s Korea during the Japanese occupation, the film follows the story of a young pickpocket, Sook-hee, who becomes the handmaiden to a wealthy Japanese heiress, Lady Hideko.</p>
+                <p>One of the film's standout features is its meticulous craftsmanship. Park Chan-wook's direction is visually arresting, with each frame carefully composed to evoke the opulence of the setting and the hidden tensions beneath the surface. The cinematography, coupled with a hauntingly evocative score, creates an immersive experience that lingers in the viewer's mind.</p>
+                <p>The narrative unfolds like a beautifully crafted puzzle, keeping the audience on the edge of their seats as layers of deception and ulterior motives are gradually revealed. The intricate plot, adapted from Sarah Waters' novel <span>"Fingersmith,"</span> is a testament to the storytelling prowess of Park Chan-wook, who skillfully subverts expectations and challenges traditional narrative structures.</p>
+                <p>The performances of the cast, particularly Kim Min-hee as Lady Hideko and Kim Tae-ri as Sook-hee, are nothing short of exceptional. The chemistry between the two leads is palpable, adding depth and nuance to their characters' complex relationship. The supporting cast, including Ha Jung-woo as the enigmatic Count Fujiwara, delivers equally compelling performances that contribute to the film's overall brilliance.</p>
+                <p>Beyond its captivating plot and stunning visuals, <span>"The Handmaiden"</span> delves into themes of power, identity, and the indomitable spirit of its female protagonists. The exploration of sexuality and agency in a repressive societal context adds layers of social commentary, making the film a thought-provoking and resonant piece of cinema.</p>
+                <div>
+                    <p>The brilliance of <span>"The Handmaiden"</span> lies in its ability to use shifting perspectives not merely as a plot device but as a means to deepen the emotional and psychological impact of the narrative. By offering a multifaceted exploration of the characters, the film transcends conventional storytelling, creating an immersive experience that resonates long after the credits roll.</p>
+                        <p>In the initial part, the story unfolds through the eyes of Sook-hee, the young pickpocket turned handmaiden. Viewers witness the world from her vantage point, gaining insight into her background, struggles, and initial impressions of Lady Hideko. This section establishes a sense of empathy for Sook-hee as the seemingly straightforward narrative takes unexpected turns.</p>
+                        <p>The narrative pivots in the second part, shifting to Lady Hideko's perspective. This transition is a narrative coup, revealing the depth of Lady Hideko's character, her vulnerabilities, and the psychological intricacies that define her relationship with Sook-hee. The audience is taken deeper into the complexities of the story, realizing that perceptions can be deceiving and that the characters are not as they initially seemed.</p>
+                        <p>The final act of the film provides yet another shift in perspective, this time focusing on Count Fujiwara. The revelations about his character and his role in the intricate plot add a layer of complexity to the narrative. The audience gains insights into his schemes, manipulations, and the true extent of the interconnected relationships between the characters.</p>
+                    <p>This narrative structure not only enhances the suspense and intrigue but also serves thematic purposes. It challenges the audience to question the reliability of the narrative, highlighting the subjectivity inherent in storytelling. As perspectives shift, the film invites viewers to reconsider their judgments and embrace the ambiguity that permeates the characters' lives.</p>
+                </div>
+                <ul class="character-names">
+                    <li>Sook-hee</li>
+                    <li>Lady Hideko</li>
+                    <li>Count Fujiwara</li>
+                    <li>Kouzuki</li>
+                </ul>
+            </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="contact-section-header">
+            <h3 ><span>★</span> Let's work together...</h3>
+        </div>
+        <div class="contact-links">
+            <a  href="https://www.instagram.com/nova_is_in_your_attic/" target="_blank" class="btn contact-details">
+                <i class="fab fa-instagram-square">Instagram</i>
+            </a>
+            <a  id="profile-link" href="https://github.com/Mangomaninyourattic" target="_blank" class="btn contact-details">
+                <i class="fab fa-github">Github</i>
+            </a>
+            <a   href="https://twitter.com/Mangoinanattic" target="_blank" class="btn contact-details">
+                <i class="fab fa-twitter">Twitter</i>
+            </a>
+            <p class="copyright">© MangoManInYourAttic</p>
+        </div>
+    </footer>
+    <div>
+
+    </div>
+</body>
+</html>
